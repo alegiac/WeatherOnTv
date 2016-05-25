@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Having set a default location, the app jumps to the weather main page
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"default_location"]!= nil) {
+        // Go to the standard
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ViewController *detailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+        [(UINavigationController*)self.window.rootViewController pushViewController:ivc animated:NO];
+
+    } else {
+        // Go to the main page
+    }
     return YES;
 }
 

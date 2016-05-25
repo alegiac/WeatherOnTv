@@ -7,9 +7,9 @@
 //
 
 #import "OpenWeatherMap.h"
-#import "AFJSONRequestOperation.h"
 
-@interface OpenWeatherMap () {
+@interface OpenWeatherMap () <NSURLSessionDelegate>
+{
     NSString *_baseURL;
     NSString *_apiKey;
     NSString *_apiVersion;
@@ -19,6 +19,8 @@
     
     OWMTemperature _currentTemperatureFormat;
 }
+
+@property (nonatomic, strong) NSURLSession *session;
 
 @end
 
@@ -36,6 +38,8 @@
         
         _currentTemperatureFormat = kOWMTempCelcius;
         
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        self.session = [NSURLSession sessionWithConfiguration:config];
     }
     return self;
 }
@@ -150,25 +154,28 @@
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
-        // callback on the caller queue
-        NSDictionary *res = [self convertResult:JSON];
-        [callerQueue addOperationWithBlock:^{
-            callback(nil, res);
-        }];
-        
-        
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        
-        // callback on the caller queue
-        [callerQueue addOperationWithBlock:^{
-            callback(error, nil);
-        }];
-        
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (!error) {
+            NSError *jsonError = nil;
+            id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+            if (!jsonError) {
+                NSDictionary *res = [self convertResult:json];
+                [callerQueue addOperationWithBlock:^{
+                    callback(nil, res);
+                }];
+            } else {
+                [callerQueue addOperationWithBlock:^{
+                    callback(jsonError,nil);
+                }];
+            }
+        } else {
+            [callerQueue addOperationWithBlock:^{
+                callback(error,nil);
+            }];
+        }
     }];
-    [_weatherQueue addOperation:operation];
+    [dataTask resume];
+ 
 }
 
 #pragma mark - public api

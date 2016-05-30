@@ -15,7 +15,6 @@
 		D23E8B251CED184E00868795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B241CED184E00868795 /* Assets.xcassets */; };
 		D23E8B2D1CED192100868795 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23E8B2C1CED192100868795 /* AVFoundation.framework */; };
 		D23E8B2F1CED1CF400868795 /* 15615748.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B2E1CED1CF400868795 /* 15615748.mp4 */; };
-		D23E8B491CEE56E300868795 /* License Agreement for SF UI Font.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B331CEE56E300868795 /* License Agreement for SF UI Font.pdf */; };
 		D23E8B4A1CEE56E300868795 /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B341CEE56E300868795 /* SF-UI-Display-Black.otf */; };
 		D23E8B4B1CEE56E300868795 /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B351CEE56E300868795 /* SF-UI-Display-Bold.otf */; };
 		D23E8B4C1CEE56E300868795 /* SF-UI-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B361CEE56E300868795 /* SF-UI-Display-Heavy.otf */; };
@@ -55,7 +54,6 @@
 		D23E8B261CED184E00868795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D23E8B2C1CED192100868795 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D23E8B2E1CED1CF400868795 /* 15615748.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 15615748.mp4; sourceTree = "<group>"; };
-		D23E8B331CEE56E300868795 /* License Agreement for SF UI Font.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "License Agreement for SF UI Font.pdf"; sourceTree = "<group>"; };
 		D23E8B341CEE56E300868795 /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		D23E8B351CEE56E300868795 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
 		D23E8B361CEE56E300868795 /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 		D23E8B321CEE56E300868795 /* SF-UI */ = {
 			isa = PBXGroup;
 			children = (
-				D23E8B331CEE56E300868795 /* License Agreement for SF UI Font.pdf */,
 				D23E8B341CEE56E300868795 /* SF-UI-Display-Black.otf */,
 				D23E8B351CEE56E300868795 /* SF-UI-Display-Bold.otf */,
 				D23E8B361CEE56E300868795 /* SF-UI-Display-Heavy.otf */,
@@ -283,7 +280,6 @@
 				D23E8B5D1CEE56E300868795 /* SF-UI-Text-Semibold.otf in Resources */,
 				D23E8B4A1CEE56E300868795 /* SF-UI-Display-Black.otf in Resources */,
 				D23E8B5A1CEE56E300868795 /* SF-UI-Text-MediumItalic.otf in Resources */,
-				D23E8B491CEE56E300868795 /* License Agreement for SF UI Font.pdf in Resources */,
 				D23E8B4F1CEE56E300868795 /* SF-UI-Display-Regular.otf in Resources */,
 				D23E8B4D1CEE56E300868795 /* SF-UI-Display-Light.otf in Resources */,
 				D23E8B521CEE56E300868795 /* SF-UI-Display-Ultralight.otf in Resources */,

@@ -13,5 +13,6 @@
 
 @property (nonatomic) NSString* name;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic) NSInteger *cityId;
 
 @end

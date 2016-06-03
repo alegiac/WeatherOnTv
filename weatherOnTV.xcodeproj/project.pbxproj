@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CAE851DD8C2987C072E4A101 /* libPods-weatherOnTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0082A84B000AB77EF62F61 /* libPods-weatherOnTV.a */; };
 		D23E8B1A1CED184E00868795 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E8B191CED184E00868795 /* main.m */; };
 		D23E8B1D1CED184E00868795 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E8B1C1CED184E00868795 /* AppDelegate.m */; };
 		D23E8B201CED184E00868795 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E8B1F1CED184E00868795 /* ViewController.m */; };
@@ -37,6 +36,7 @@
 		D23E8B5D1CEE56E300868795 /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B471CEE56E300868795 /* SF-UI-Text-Semibold.otf */; };
 		D23E8B5E1CEE56E300868795 /* SF-UI-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B481CEE56E300868795 /* SF-UI-Text-SemiboldItalic.otf */; };
 		D23E8B651CEFB1F100868795 /* OpenWeatherMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E8B641CEFB1F100868795 /* OpenWeatherMap.m */; };
+		D2B69EBD1D0082D80017E2DF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B69EBC1D0082D80017E2DF /* MainViewController.m */; };
 		F8BBAD901CF498060099C68C /* WeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BBAD8F1CF498060099C68C /* WeatherLocation.m */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +77,8 @@
 		D23E8B481CEE56E300868795 /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		D23E8B631CEFB1F100868795 /* OpenWeatherMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenWeatherMap.h; path = Library/Openweathermap/OpenWeatherMap.h; sourceTree = "<group>"; };
 		D23E8B641CEFB1F100868795 /* OpenWeatherMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenWeatherMap.m; path = Library/Openweathermap/OpenWeatherMap.m; sourceTree = "<group>"; };
+		D2B69EBB1D0082D80017E2DF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		D2B69EBC1D0082D80017E2DF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EA47574DF77D6E561C89D089 /* Pods-weatherOnTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherOnTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherOnTV/Pods-weatherOnTV.release.xcconfig"; sourceTree = "<group>"; };
 		F8BBAD8E1CF498060099C68C /* WeatherLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherLocation.h; path = Models/WeatherLocation.h; sourceTree = "<group>"; };
 		F8BBAD8F1CF498060099C68C /* WeatherLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherLocation.m; path = Models/WeatherLocation.m; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D23E8B2D1CED192100868795 /* AVFoundation.framework in Frameworks */,
-				CAE851DD8C2987C072E4A101 /* libPods-weatherOnTV.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,13 +135,12 @@
 		D23E8B171CED184E00868795 /* weatherOnTV */ = {
 			isa = PBXGroup;
 			children = (
+				D2B69EBA1D0082B90017E2DF /* ViewControllers */,
 				D23E8B611CEFB1B900868795 /* Library */,
 				D23E8B321CEE56E300868795 /* SF-UI */,
 				D23E8B2E1CED1CF400868795 /* 15615748.mp4 */,
 				D23E8B1B1CED184E00868795 /* AppDelegate.h */,
 				D23E8B1C1CED184E00868795 /* AppDelegate.m */,
-				D23E8B1E1CED184E00868795 /* ViewController.h */,
-				D23E8B1F1CED184E00868795 /* ViewController.m */,
 				D23E8B211CED184E00868795 /* Main.storyboard */,
 				D23E8B241CED184E00868795 /* Assets.xcassets */,
 				D23E8B261CED184E00868795 /* Info.plist */,
@@ -203,6 +203,17 @@
 			name = Openweathermap;
 			sourceTree = "<group>";
 		};
+		D2B69EBA1D0082B90017E2DF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D23E8B1E1CED184E00868795 /* ViewController.h */,
+				D23E8B1F1CED184E00868795 /* ViewController.m */,
+				D2B69EBB1D0082D80017E2DF /* MainViewController.h */,
+				D2B69EBC1D0082D80017E2DF /* MainViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F8BBAD911CF4980A0099C68C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,12 +230,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D23E8B291CED184E00868795 /* Build configuration list for PBXNativeTarget "weatherOnTV" */;
 			buildPhases = (
-				B493B7002446135C226802FD /* 📦 Check Pods Manifest.lock */,
 				D23E8B111CED184E00868795 /* Sources */,
 				D23E8B121CED184E00868795 /* Frameworks */,
 				D23E8B131CED184E00868795 /* Resources */,
-				B2606112A075E2489EB2D0AA /* 📦 Embed Pods Frameworks */,
-				295CDF38C17DCAF114C02EB7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,60 +314,13 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		295CDF38C17DCAF114C02EB7 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherOnTV/Pods-weatherOnTV-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B2606112A075E2489EB2D0AA /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherOnTV/Pods-weatherOnTV-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B493B7002446135C226802FD /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D23E8B111CED184E00868795 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D23E8B201CED184E00868795 /* ViewController.m in Sources */,
+				D2B69EBD1D0082D80017E2DF /* MainViewController.m in Sources */,
 				D23E8B1D1CED184E00868795 /* AppDelegate.m in Sources */,
 				D23E8B1A1CED184E00868795 /* main.m in Sources */,
 				D23E8B651CEFB1F100868795 /* OpenWeatherMap.m in Sources */,
@@ -425,47 +386,8 @@
 			};
 			name = Debug;
 		};
-		D23E8B281CED184E00868795 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = appletvos;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		D23E8B2A1CED184E00868795 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EEDE8E8865B913D1A6D305 /* Pods-weatherOnTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -476,19 +398,6 @@
 			};
 			name = Debug;
 		};
-		D23E8B2B1CED184E00868795 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA47574DF77D6E561C89D089 /* Pods-weatherOnTV.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = weatherOnTV/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AleGiac.weatherOnTV;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -496,19 +405,17 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D23E8B271CED184E00868795 /* Debug */,
-				D23E8B281CED184E00868795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D23E8B291CED184E00868795 /* Build configuration list for PBXNativeTarget "weatherOnTV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D23E8B2A1CED184E00868795 /* Debug */,
-				D23E8B2B1CED184E00868795 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

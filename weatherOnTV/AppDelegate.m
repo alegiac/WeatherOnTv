@@ -23,7 +23,7 @@
         // Go to the standard
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ViewController *detailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-        [(UINavigationController*)self.window.rootViewController pushViewController:ivc animated:NO];
+        [(UINavigationController*)self.window.rootViewController pushViewController:detailsViewController animated:NO];
 
     } else {
         // Go to the main page

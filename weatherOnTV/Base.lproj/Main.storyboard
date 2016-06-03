@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="aoU-5r-uNV">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="iji-Q6-qgW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="-66" y="-590"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="btv-Wn-heV">
             <objects>
-                <viewController id="9KS-dy-YDe" sceneMemberID="viewController">
+                <viewController id="9KS-dy-YDe" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tFK-1b-rZe"/>
                         <viewControllerLayoutGuide type="bottom" id="JjD-Fg-qMA"/>
@@ -134,10 +134,11 @@
                             </button>
                         </subviews>
                     </view>
+                    <navigationItem key="navigationItem" id="FD9-Hb-kHt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eW1-0X-kr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="-5422"/>
+            <point key="canvasLocation" x="3730" y="-5422"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="351-jy-UJg">
@@ -287,6 +288,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z32-ea-QeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-66" y="-2360"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BEf-Ki-J6g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iji-Q6-qgW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="boh-1i-mPi">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9KS-dy-YDe" kind="relationship" relationship="rootViewController" id="l4M-Ro-0Hr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A42-gR-IxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="-5422"/>
         </scene>
     </scenes>
     <resources>

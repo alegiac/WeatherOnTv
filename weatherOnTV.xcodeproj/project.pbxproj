@@ -36,6 +36,7 @@
 		D23E8B5D1CEE56E300868795 /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B471CEE56E300868795 /* SF-UI-Text-Semibold.otf */; };
 		D23E8B5E1CEE56E300868795 /* SF-UI-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D23E8B481CEE56E300868795 /* SF-UI-Text-SemiboldItalic.otf */; };
 		D23E8B651CEFB1F100868795 /* OpenWeatherMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D23E8B641CEFB1F100868795 /* OpenWeatherMap.m */; };
+		D26EE29F1D04E3E10054F530 /* meteocons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26EE29E1D04E3E10054F530 /* meteocons.ttf */; };
 		D2B69EBD1D0082D80017E2DF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B69EBC1D0082D80017E2DF /* MainViewController.m */; };
 		F8BBAD901CF498060099C68C /* WeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BBAD8F1CF498060099C68C /* WeatherLocation.m */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		D23E8B481CEE56E300868795 /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		D23E8B631CEFB1F100868795 /* OpenWeatherMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenWeatherMap.h; path = Library/Openweathermap/OpenWeatherMap.h; sourceTree = "<group>"; };
 		D23E8B641CEFB1F100868795 /* OpenWeatherMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenWeatherMap.m; path = Library/Openweathermap/OpenWeatherMap.m; sourceTree = "<group>"; };
+		D26EE29E1D04E3E10054F530 /* meteocons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = meteocons.ttf; sourceTree = "<group>"; };
 		D2B69EBB1D0082D80017E2DF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		D2B69EBC1D0082D80017E2DF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EA47574DF77D6E561C89D089 /* Pods-weatherOnTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherOnTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherOnTV/Pods-weatherOnTV.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		D23E8B321CEE56E300868795 /* SF-UI */ = {
 			isa = PBXGroup;
 			children = (
+				D26EE29E1D04E3E10054F530 /* meteocons.ttf */,
 				D23E8B341CEE56E300868795 /* SF-UI-Display-Black.otf */,
 				D23E8B351CEE56E300868795 /* SF-UI-Display-Bold.otf */,
 				D23E8B361CEE56E300868795 /* SF-UI-Display-Heavy.otf */,
@@ -287,6 +290,7 @@
 			files = (
 				D23E8B5D1CEE56E300868795 /* SF-UI-Text-Semibold.otf in Resources */,
 				D23E8B4A1CEE56E300868795 /* SF-UI-Display-Black.otf in Resources */,
+				D26EE29F1D04E3E10054F530 /* meteocons.ttf in Resources */,
 				D23E8B5A1CEE56E300868795 /* SF-UI-Text-MediumItalic.otf in Resources */,
 				D23E8B4F1CEE56E300868795 /* SF-UI-Display-Regular.otf in Resources */,
 				D23E8B4D1CEE56E300868795 /* SF-UI-Display-Light.otf in Resources */,

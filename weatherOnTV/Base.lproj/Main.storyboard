@@ -6,6 +6,7 @@
     <customFonts key="customFonts">
         <mutableArray key="SF-UI-Display-Light.otf">
             <string>SFUIDisplay-Light</string>
+            <string>SFUIDisplay-Light</string>
         </mutableArray>
         <mutableArray key="SF-UI-Display-Regular.otf">
             <string>SFUIDisplay-Regular</string>
@@ -154,11 +155,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pexels-photo-2" translatesAutoresizingMaskIntoConstraints="NO" id="PXc-fV-rOh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dawn-landscape-mountains-nature-2" translatesAutoresizingMaskIntoConstraints="NO" id="PXc-fV-rOh">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
                             <view alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5K-KH-Scc">
-                                <rect key="frame" x="813" y="160" width="1107" height="759"/>
+                                <rect key="frame" x="1920" y="290" width="1107" height="500"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-lY-8z8">
                                         <rect key="frame" x="35" y="33" width="1036" height="693"/>
@@ -234,13 +235,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGq-If-BzW">
-                                <rect key="frame" x="863" y="961" width="195" height="86"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <view alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-fM-bOx">
-                                <rect key="frame" x="0.0" y="290" width="500" height="500"/>
+                                <rect key="frame" x="-500" y="290" width="500" height="500"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather On" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xI2-Tg-IST">
                                         <rect key="frame" x="-17" y="175" width="533" height="150"/>
@@ -254,10 +250,15 @@
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" id="FD9-Hb-kHt"/>
+                    <connections>
+                        <outlet property="locationSelectionContainer" destination="v5K-KH-Scc" id="rY7-tF-LH2"/>
+                        <outlet property="titleContainer" destination="Pdg-fM-bOx" id="TLd-RH-9A0"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="To_Weather_Page" id="4gc-Op-adh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eW1-0X-kr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3678" y="-5554"/>
+            <point key="canvasLocation" x="3916" y="-5786"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="351-jy-UJg">
@@ -428,7 +429,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pexels-photo-2" width="1920" height="1280"/>
+        <image name="dawn-landscape-mountains-nature-2" width="4896" height="3264"/>
         <image name="sunrise-phu-quoc-island-ocean" width="1920" height="1267"/>
     </resources>
 </document>

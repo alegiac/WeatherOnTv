@@ -13,24 +13,49 @@
 
 @interface MainViewController () <CLLocationManagerDelegate>
 
-@property(strong,nonatomic) CLLocationManager *locationManager;
+@property (strong,nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) IBOutlet UIView *locationSelectionContainer;
+@property (strong, nonatomic) IBOutlet UIView *titleContainer;
 
 @end
 
 @implementation MainViewController
 
+- (IBAction)didTapOnGPS:(id)sender
+{
+    if (!self.locationManager) {
+        self.locationManager = [CLLocationManager new];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _locationManager = [[CLLocationManager alloc]init];
-    [_locationManager setDelegate:self];
-    [_locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-    if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
+    // Does the user own a location?
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"default_location"]) {
+        [self performSegueWithIdentifier:@"To_Weather_Page" sender:self];
     }
+}
+
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
     
-    [_locationManager requestLocation];
+    [UIView animateWithDuration:1.0f animations:^{
+    
+        CGRect titleRect = self.titleContainer.frame;
+        titleRect.origin.x = 0;
+        [self.titleContainer setFrame:titleRect];
+        
+        CGRect locationSelectionRect = self.locationSelectionContainer.frame;
+        locationSelectionRect.origin.x-=locationSelectionRect.size.width;
+        [self.locationSelectionContainer setFrame:locationSelectionRect];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +75,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:defLocation forKey:@"default_location"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
+    [self performSegueWithIdentifier:@"To_Weather_Page" sender:self];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -63,26 +89,25 @@
         case kCLAuthorizationStatusDenied:
             break;
         case kCLAuthorizationStatusRestricted:
+            /*
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GPS denied" message:@"GPS access is restricted or denied. In order to use this App with current location, please enable GPS in your AppleTV Settings App." preferredStyle:UIAlertControllerStyleAlert];
+             
+             [alert addAction:[UIAlertAction actionWithTitle:@"Go to Settings now" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+             }]];
+            */
             break;
+            
         case kCLAuthorizationStatusNotDetermined:
+            NSLog(@"NOT DETERMINED");
             break;
         case kCLAuthorizationStatusAuthorizedAlways:
-            break;
         case kCLAuthorizationStatusAuthorizedWhenInUse:
+            [self.locationManager requestLocation];
             break;
         default:
             break;
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

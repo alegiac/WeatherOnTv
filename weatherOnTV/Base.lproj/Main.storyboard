@@ -6,6 +6,7 @@
     <customFonts key="customFonts">
         <mutableArray key="SF-UI-Display-Light.otf">
             <string>SFUIDisplay-Light</string>
+            <string>SFUIDisplay-Light</string>
         </mutableArray>
         <mutableArray key="SF-UI-Display-Regular.otf">
             <string>SFUIDisplay-Regular</string>
@@ -187,6 +188,7 @@
                     <connections>
                         <outlet property="locationSelectionContainer" destination="v5K-KH-Scc" id="rY7-tF-LH2"/>
                         <outlet property="titleContainer" destination="Pdg-fM-bOx" id="TLd-RH-9A0"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="To_Weather_Page" id="4gc-Op-adh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eW1-0X-kr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,4 +367,7 @@
         <image name="dawn-landscape-mountains-nature-2" width="4896" height="3264"/>
         <image name="sunrise-phu-quoc-island-ocean" width="1920" height="1267"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4gc-Op-adh"/>
+    </inferredMetricsTieBreakers>
 </document>

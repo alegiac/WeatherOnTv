@@ -87,11 +87,17 @@
 {
     switch (status) {
         case kCLAuthorizationStatusDenied:
-            NSLog(@"DENIED");
             break;
         case kCLAuthorizationStatusRestricted:
-            NSLog(@"RESTRICTED");
+            /*
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GPS denied" message:@"GPS access is restricted or denied. In order to use this App with current location, please enable GPS in your AppleTV Settings App." preferredStyle:UIAlertControllerStyleAlert];
+             
+             [alert addAction:[UIAlertAction actionWithTitle:@"Go to Settings now" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+             }]];
+            */
             break;
+            
         case kCLAuthorizationStatusNotDetermined:
             NSLog(@"NOT DETERMINED");
             break;

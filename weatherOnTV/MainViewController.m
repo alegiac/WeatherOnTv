@@ -16,6 +16,7 @@
 @property (strong,nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet UIView *locationSelectionContainer;
 @property (strong, nonatomic) IBOutlet UIView *titleContainer;
+
 @end
 
 @implementation MainViewController
@@ -57,7 +58,6 @@
     }];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -74,6 +74,7 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:defLocation forKey:@"default_location"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+
     [self performSegueWithIdentifier:@"To_Weather_Page" sender:self];
 }
 

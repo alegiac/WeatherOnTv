@@ -5,24 +5,32 @@
 //  Created by Alessandro Giacomella on 24/05/16.
 //  Copyright © 2016 Alessandro Giacomella. All rights reserved.
 //
-
 #import "WeatherLocation.h"
 
 @implementation WeatherLocation
 
+#pragma mark NSCoding
 
-- (void)encodeWithCoder:(NSCoder *)coder
+- (void) encodeWithCoder:(NSCoder *)encoder
 {
-    coder encodeObject:self forKey:<#(nonnull NSString *)#>
-    
+    [encoder encodeObject:_name forKey:@"name"];
+    [encoder encodeDouble:_coordinates.latitude forKey:@"coordinates_lat"];
+    [encoder encodeDouble:_coordinates.longitude forKey:@"coordinates_lon"];
+    [encoder encodeObject:_cityId forKey:@"city_id"];
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
+- (id) initWithCoder:(NSCoder *)decoder
 {
-    self = [super initWithCoder:coder];
-    if (self) {
-        
-        
+    
+    NSString *name = [decoder decodeObjectForKey:@"name"];
+    CLLocationDegrees latitude = [decoder decodeDoubleForKey:@"coordinates_lat"];
+    CLLocationDegrees longitude = [decoder decodeDoubleForKey:@"coordinates_lon"];
+    NSString *cityId = [decoder decodeObjectForKey:@"city_id"];
+    
+    if (self = [super init]) {
+        self.name = name;
+        self.coordinates = CLLocationCoordinate2DMake(latitude, longitude);
+        self.cityId = cityId;
     }
     return self;
 }

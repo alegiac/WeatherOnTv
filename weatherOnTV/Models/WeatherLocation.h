@@ -12,7 +12,7 @@
 @interface WeatherLocation : NSObject <NSCoding>
 
 @property (nonatomic) NSString* name;
-@property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic) NSInteger *cityId;
+@property (nonatomic) CLLocationCoordinate2D coordinates;
+@property (nonatomic) NSString *cityId;
 
 @end

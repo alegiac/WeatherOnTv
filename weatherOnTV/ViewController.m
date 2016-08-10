@@ -31,7 +31,12 @@
 {
     NSDate *date = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:date];
+    NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond|NSCalendarUnitWeekday fromDate:date];
+    if (components.hour >= 19 || components.hour <= 6) {
+        NSLog(@"It's night shift");
+    } else {
+        NSLog(@"It's day shift");
+    }
     
     [_dayLabel setText:[NSString stringWithFormat:@"%02ld",(long) components.day]];
     NSString *monthName = [[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:(components.month-1)];
@@ -39,7 +44,6 @@
     
     [_monthLabel setText:monthName];
     [_dayOfWeekLabel setText:dowName];
-
 }
 
 - (void)viewDidLoad
@@ -47,22 +51,7 @@
     [super viewDidLoad];
     [self updateDate];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:60.0
-                                                  target:self
-                                                selector:@selector(updateDate)
-                                                userInfo:nil repeats:YES];
-    
-    // Acquire time of the day (sunrise, day, sunset, night)
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH.mm"];
-    NSString *strCurrentTime = [dateFormatter stringFromDate:[NSDate date]];
-    
-    NSLog(@"Check float value: %.2f",[strCurrentTime floatValue]);
-    if ([strCurrentTime floatValue] >= 18.00 || [strCurrentTime floatValue]  <= 6.00){
-        NSLog(@"It's night time");
-    }else{
-        NSLog(@"It's day time");
-    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDate) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {

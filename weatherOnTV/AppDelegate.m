@@ -15,19 +15,8 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // SE HO UN ELEMENTO DI DEFAULT IN LISTA, VADO A PAGINA DI VISUALIZZAZIONE METEO
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"default_location"]!= nil) {
-        // Go to meteo detail page
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ViewController *detailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-        [(UINavigationController*)self.window.rootViewController pushViewController:detailsViewController animated:NO];
-
-    } else {
-        // Go to mainpage
-    }
     return YES;
 }
 

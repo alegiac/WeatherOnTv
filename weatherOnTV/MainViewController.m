@@ -23,12 +23,10 @@
 
 - (IBAction)didTapOnGPS:(id)sender
 {
-//    if (!self.locationManager) {
-        self.locationManager = [CLLocationManager new];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-        [self.locationManager requestWhenInUseAuthorization];
-//    }
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    [self.locationManager requestWhenInUseAuthorization];
 }
 
 - (void)viewDidLoad
@@ -36,7 +34,7 @@
     [super viewDidLoad];
     
     // Does the user own a location?
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"default_location"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"default_location"] != nil) {
         [self performSegueWithIdentifier:@"To_Weather_Page" sender:self];
     }
 }
@@ -70,9 +68,10 @@
 {
     CLLocation *current = (CLLocation *)[locations lastObject];
     WeatherLocation *defLocation = [[WeatherLocation alloc] init];
-    [defLocation setCoordinate:[current coordinate]];
+    [defLocation setCoordinates:[current coordinate]];
     
-    [[NSUserDefaults standardUserDefaults] setObject:defLocation forKey:@"default_location"];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:defLocation];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"default_location"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     [self performSegueWithIdentifier:@"To_Weather_Page" sender:self];

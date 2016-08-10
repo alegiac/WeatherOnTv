@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @import CoreLocation;
 
-@interface WeatherLocation : NSObject
+@interface WeatherLocation : NSObject <NSCoding>
 
 @property (nonatomic) NSString* name;
 @property (nonatomic) CLLocationCoordinate2D coordinate;

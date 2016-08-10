@@ -10,4 +10,21 @@
 
 @implementation WeatherLocation
 
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    coder encodeObject:self forKey:<#(nonnull NSString *)#>
+    
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+        
+    }
+    return self;
+}
+
 @end

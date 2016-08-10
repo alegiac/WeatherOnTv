@@ -23,12 +23,12 @@
 
 - (IBAction)didTapOnGPS:(id)sender
 {
-    if (!self.locationManager) {
+//    if (!self.locationManager) {
         self.locationManager = [CLLocationManager new];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         [self.locationManager requestWhenInUseAuthorization];
-    }
+//    }
 }
 
 - (void)viewDidLoad
@@ -85,28 +85,26 @@
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    switch (status) {
-        case kCLAuthorizationStatusDenied:
-            break;
-        case kCLAuthorizationStatusRestricted:
-            /*
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"GPS denied" message:@"GPS access is restricted or denied. In order to use this App with current location, please enable GPS in your AppleTV Settings App." preferredStyle:UIAlertControllerStyleAlert];
-             
-             [alert addAction:[UIAlertAction actionWithTitle:@"Go to Settings now" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-             }]];
-            */
-            break;
-            
-        case kCLAuthorizationStatusNotDetermined:
-            NSLog(@"NOT DETERMINED");
-            break;
-        case kCLAuthorizationStatusAuthorizedAlways:
-        case kCLAuthorizationStatusAuthorizedWhenInUse:
-            [self.locationManager requestLocation];
-            break;
-        default:
-            break;
+    if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"App permissions denied" message:@"In order to use GPS for current location, please enable permissions in Settings > Apps > WeatherOnTV > Location" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Go to Settings"
+                                                                     style:UIAlertActionStyleDefault
+                                                                   handler:^(UIAlertAction  *action) {
+                                                                       NSURL *settingURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                                                                       [[UIApplication sharedApplication] openURL:settingURL];
+                                                                   }];
+        UIAlertAction *close = [UIAlertAction actionWithTitle:@"No, thanks"
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction *action) {
+                                                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                                            }];
+
+        [alert addAction:action];
+        [alert addAction:close];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        [self.locationManager requestLocation];
     }
 }
 
